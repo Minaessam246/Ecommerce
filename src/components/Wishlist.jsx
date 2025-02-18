@@ -92,7 +92,7 @@ setisLoading(false)
        
         <tbody>
             {products.map((product)=>(
-<tr class=" flex justify-between items-center border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+<tr class=" flex justify-between table_style items-center border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                <div className="lefttable text-left "> <td class="p-4">
                     <img src={product.imageCover} class="w-16 md:w-32 max-w-full max-h-full inline" alt="iPhone 12"/>
                 </td>

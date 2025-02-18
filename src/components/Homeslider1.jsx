@@ -1,10 +1,11 @@
 import React from 'react'
 
-import slider1 from "../assets/drive-download-20250125T182520Z-001/Slider-2.jpeg"
-import slider3 from "../assets/drive-download-20250125T182520Z-001/Slider-image-2.jpeg"
-import slider2 from "../assets/drive-download-20250125T182520Z-001/Slider-image-1.jpeg"
-import slider4 from "../assets/drive-download-20250125T182520Z-001/Slider-image-3.jpeg"
+import slider1 from "../assets/drive-download-20250125T182520Z-001/slider-2.jpeg"
+import slider3 from "../assets/drive-download-20250125T182520Z-001/slider-image-2.jpeg"
+import slider2 from "../assets/drive-download-20250125T182520Z-001/slider-image-1.jpeg"
+import slider4 from "../assets/drive-download-20250125T182520Z-001/slider-image-3.jpeg"
 import Slider from 'react-slick'
+
 export default function Homeslider1() {
     const settings = {
         dots: true,
@@ -15,10 +16,10 @@ export default function Homeslider1() {
         slidesToScroll: 1
       };
   return (
-    <><div className=" flex-wrap flex justify-center ">
+    <><div className=" flex-wrap flex justify-center mb-48 md:mb-10 ">
     
     
-    <div className="my-20 w-96  slider_right">
+    <div className="mt-20 w-96  slider_right">
       <Slider {...settings}>
     <img src={slider1} className='h-96  object-cover' alt="" />
     <img src={slider2} className='h-96  object-cover' alt="" />

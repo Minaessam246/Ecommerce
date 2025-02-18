@@ -99,9 +99,9 @@ setisLoading(false)
         {products.length!=0?
     
         products.map((product)=>(
-<tr class=" flex justify-between items-center border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+<tr class=" flex justify-between items-center table_style border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                <div className="lefttable text-left "> <td class="p-4">
-                    <img src={product.product.imageCover} class="w-16 md:w-32 max-w-full max-h-full inline" alt="iPhone 12"/>
+                    <img src={product.product.imageCover} class="w-16 md:w-32  max-w-full max-h-full inline" alt="iPhone 12"/>
                 </td>
                 <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
                     {product.product.title}

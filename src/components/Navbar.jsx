@@ -2,8 +2,10 @@ import React, { useContext, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { CartContext } from '../Contexts/CartContext'
 import axios from 'axios'
+import { useState } from 'react'
 export default function Navbar() {
   let {count ,cartID,setcartID,setcount}=useContext(CartContext)
+  const [toggle, settoggle] = useState(false)
 
 
 
@@ -51,14 +53,49 @@ useEffect(() => {
       </ul>
     </div> 
    
-    <div className='flex gap-5  items-center text-center navitem3 ' >
+   <div className=' gap-5 hidden md:flex items-center text-center navitem3 ' >
     <i className="fa-solid fa-cart-shopping text-3xl relative "> <div className=" w-5 h-5  absolute -top-2 -right-2 cartCounter flex items-center justify-center text-white">
      {count}
      
      </div></i>
     <Link onClick={()=>{localStorage.removeItem("userToken");localStorage.removeItem("cartnumber");}} to={"/login"}>Log Out</Link>
     </div>
+    <div className={`text-2xl md:hidden p-1 px-2   ${toggle?"border-4 rounded-lg  border-rose-500 transition-all":""}`} onClick={()=>{ settoggle(!toggle)}}><i class="fa-solid fa-bars"></i></div>
   </div>
+  {
+    toggle?
+    
+     <ul className="font-medium flex flex-col z-10 transition-all fixed top-12  tognav left-0 right-0 p-4 md:p-0 mt-4  md:hidden   ">
+    <li>
+      <NavLink to="/home"  activeclassname="active" className="block py-2 px-3   rounded-sm  md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</NavLink>
+    </li>
+    <li>
+      <NavLink to="/cart"  activeclassname="active" className="block py-2 px-3   rounded-sm  md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Cart</NavLink>
+    </li>
+    <li>
+      <NavLink to="/wishlist"  activeclassname="active" className="block py-2 px-3   rounded-sm  md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Wish List</NavLink>
+    </li>
+    <li>
+      <NavLink to="/products"  activeclassname="active" className="block py-2 px-3   rounded-sm  md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Products</NavLink>
+    </li>
+    <li>
+      <NavLink to="/categories"  activeclassname="active" className="block py-2 px-3   rounded-sm  md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Categories</NavLink>
+    </li>
+    <li>
+      <NavLink to="/brands"  activeclassname="active" className="block py-2 px-3   rounded-sm  md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Brands</NavLink>
+    </li>
+    <div className='flex gap-5 flex-col items-center text-center navitem3  ' >
+    <i className="fa-solid fa-cart-shopping text-3xl relative "> <div className=" w-5 h-5  absolute -top-2 -right-2 cartCounter flex items-center justify-center text-white">
+     {count}
+     
+     </div></i>
+    <Link onClick={()=>{localStorage.removeItem("userToken");localStorage.removeItem("cartnumber");}} to={"/login"}>Log Out</Link>
+    </div>
+   
+  </ul>:null
+  }
+
+  
 </nav>
 
     </>

@@ -59,9 +59,9 @@ axios.get(`https://ecommerce.routemisr.com/api/v1/categories`).then((res)=>{ set
    
     <Slider {...settings}>
     {Categories.map((product)=>(
-      <div className='w-36 slider2'>
+      <div className='w-36 slider2 :mt-40'>
 <img src={product.image} className='h-72 w-full object-cover ' alt="" />
-<h2 className='font-semibold '>{product.name}</h2>
+<h2 className='font-semibold  text-center'>{product.name}</h2>
 </div>
     ))
 
