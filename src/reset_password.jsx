@@ -54,7 +54,7 @@ export default function Reset_password() {
    
     <div className='flex gap-5  items-center text-center navitem3 ' >
    
-    <Link  to={"/signin"}>Log in</Link>
+    <Link  to={"/login"}>Log in</Link>
     <Link  to={"/signup"}>Register</Link>
     </div>
   </div>
